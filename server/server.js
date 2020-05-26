@@ -15,7 +15,9 @@ const app = express();
 app.use(cors());
 
 // POSTパラメータをJSONで取得できるようにする
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 // public以下に配置したファイルは直リンクで見れるようにする
@@ -34,7 +36,9 @@ const server = app.listen(process.env.PORT || 4000, '0.0.0.0', () => {
 });
 
 // socketサーバーを立ち上げる
-const io = require('socket.io')(server, { origins: '*:*' });
+const io = require('socket.io')(server, {
+  origins: '*:*'
+});
 
 // socketイベントの設定
 io.on('connection', (socket) => {
@@ -49,5 +53,10 @@ io.on('connection', (socket) => {
   socket.on('send', (message) => {
     console.log('send:', message);
     io.emit('send', message);
+  });
+
+  socket.on('sendName', (message) => {
+    console.log('sendName:', message);
+    io.emit('sendName', message);
   });
 });
