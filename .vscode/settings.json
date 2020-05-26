@@ -3,11 +3,17 @@
   "editor.minimap.enabled": false,
 
   // eslintをvueでも適応させる
-  "eslint.validate": [
-    "javascript",
-    "vue"
-  ],
-
-  // veturのバリデーションが余計なことをしていたのでoffにする（普通のeslintでチェックする）
-  "vetur.validation.template": false
+  "eslint.validate": ["javascript", "vue"],
+  "vetur.validation.template": false,
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true,
+      "semi": true
+    }
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "typescript.preferences.quoteStyle": "single",
+  "eslint.autoFixOnSave": true
 }
