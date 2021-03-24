@@ -16,7 +16,7 @@
   "author": "ruru8 <chiharu.yasuda@classi.jp>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.3",
     "bootstrap-vue": "^2.15.0",
     "cors": "^2.8.5",
